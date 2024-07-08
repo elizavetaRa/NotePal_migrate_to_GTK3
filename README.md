@@ -33,3 +33,14 @@ followed by the compile command again.
 `git checkout 15d0a61cdd672ec877d872fc49b1cb54d3293a71 `
 
 and then run `` gcc -g -Wall CompileNotePal.c -o NotePal `pkg-config --cflags --libs gtk+-2.0 ``
+
+##### Changes log for GTK3 upgrade
+
+- **line 166:** Change: Gtk.stock is deprecated since 3-11 and can be replaced with a new widget signal gtk_widget_add_accelerator
+- **line 168:** Change: GTK*'Letter' keyboard event throws compillation error "undeclared", is replaced through GDK_KEY*'letter'
+- **line 247:** Change: Gtk.stock is deprecated since 3-11 and can be replaced with gtk_image_new_from_icon_name
+- **line 287:** Change: gtk_widget_modify_font deprecated
+- **line 308:** Change: gtk_font_selection_dialog_new is deprecated and replaced gtk_font_chooser_dialog_new that now requires parent window
+- **line 331:** Change: gtk_font_selection_dialog_set_preview_text is deprecated and is repaced through a style context provider with a font setting
+- **line 396:** Change: gtk_file_chooser_dialog_new requires an GtkFileChooserAction and a parent window
+- **line 607:** Change: gtk_file_chooser_dialog_new now requires a parent window and an action
